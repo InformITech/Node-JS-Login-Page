@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The Hacker Store | Login</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="video-container">
+    <video autoplay loop muted id="login" src="/videos/Bg.mp4"></video>
+  </div>
+  <div class="container w-100">
+    <form action="/home" method="post">
+    <div class="row">
+      <div class="col-12">
+        <center>
+          <div class="loginMain col-xs-10 col-sm-8 col-md-6 col-lg-6 col-xl-6">
+            <p class="error"><%=err %></p>
+            <input type="email" class="textbox" id="mailbox" name="email"  placeholder="Enter your email here">
+            <input type="password" id="Pass" class="password" name="password" placeholder="Enter your password">
+            <button class="Eyebtn" onclick="Eyefunc()" type="button">
+              <i id="logo" class="fa fa-eye-slash"></i>
+            </button>
+            <div class="btnSection">
+              <button class="submit" type="submit" id="subBtn">Submit</button>
+            </div>
+          </div>
+        </center>
+      </div>
+    </div>
+  </form>
+  </div>
+ 
+  <script>
+    function Eyefunc() {
+      let show=document.getElementById('Pass')
+      let logo = document.getElementById('logo')
+      if (show.type=="password") {
+        show.type="text"
+        logo.className = "fa fa-eye"
+      }else{
+        logo.className = "fa fa-eye-slash"
+        show.type="password"
+      }
+    }
+  </script>
+</body>
+</html>
